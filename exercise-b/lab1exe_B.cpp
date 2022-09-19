@@ -18,21 +18,33 @@ double Projectile_travel_distance(double a, double v);
 double degree_to_radian(double d);
 
 void create_table(double v) {
-    cout << "Angle \tt \td \n";
-    cout << "(deg) \t(sec) \t(m) \n";
+    cout << "Angle \tt \t\td \n";
+    cout << "(deg) \t(sec) \t\t(m) \n";
 
     double deg = 0.0; //angle in degrees start from 0
-    double time = 0.0;
-    double distance = 0.0;
+
 
     while(deg <= 90.0){
-        time = ((2 * v) * sin(deg)) / G;
-        distance = ((v * v) / G) * sin(2 * deg);
+        double deg_radian = degree_to_radian(deg);
+        double time = Projectile_travel_time(deg_radian, v);
+        double distance = Projectile_travel_distance(deg_radian, v);
 
         cout << deg << "\t" << time << "\t\t" << distance << endl;
 
         deg += 5.0;
     }
+}
+
+double degree_to_radian(double d) {
+    return (d * (PI / 180)); 
+}
+
+double Projectile_travel_distance(double a, double v){
+    return (((v * v) / G) * sin(2 * a));
+}
+
+double Projectile_travel_time(double a, double v) {
+    return (((2 * v) * sin(a)) / G);
 }
 
 int main(void)
