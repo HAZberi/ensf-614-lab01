@@ -20,6 +20,19 @@ double degree_to_radian(double d);
 void create_table(double v) {
     cout << "Angle \tt \td \n";
     cout << "(deg) \t(sec) \t(m) \n";
+
+    double deg = 0.0; //angle in degrees start from 0
+    double time = 0.0;
+    double distance = 0.0;
+
+    while(deg <= 90.0){
+        time = ((2 * v) * sin(deg)) / G;
+        distance = ((v * v) / G) * sin(2 * deg);
+
+        cout << deg << "\t" << time << "\t\t" << distance << endl;
+
+        deg += 5.0;
+    }
 }
 
 int main(void)
