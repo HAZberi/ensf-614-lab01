@@ -1,8 +1,8 @@
 /*
  *  lab1exe_B.cpp
  *  ENSF 614 Lab 1, exercise B
- *  Created by Mahmood Moussavi
  *  Completed by: Hassaan Ahmed Zuberi
+ *  Submitted on: Sept 20, 2022
  */
 
 #include <iostream>
